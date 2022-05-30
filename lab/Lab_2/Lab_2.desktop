@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+Icon=Lab_2
+Name=Lab_2
+Exec=/usr/bin/sailjail -p Lab_2.desktop /usr/bin/Lab_2
+# translation example:
+# your app name in German locale (de)
+#
+# Remember to comment out the following line, if you do not want to use
+# a different app name in German locale (de).
+Name[de]=Lab_2
+
+[X-Sailjail]
+Permissions=Audio;Calendar;Camera;Contacts;Documents;Downloads;Email;Internet;Messages;Microphone;Music;Phone;Pictures;Videos
+OrganizationName=ru.test
+ApplicationName=Lab_2
