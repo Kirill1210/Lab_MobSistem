@@ -4,20 +4,21 @@ import Sailfish.Silica 1.0
 Dialog {
 
     property string res1
-    property string res11
     property string res2
-    property string res22
     property string res3
-    property string res33
     property string res4
-    property string res44
     property string res5
-    property string res55
     property string res6
-    property string res66
-
+    property string res7
+    property string l1
+    property string l2
+    property string l3
+    property string l4
+    property string l5
+    property string l6
+    property string l7
     DialogHeader {
-        acceptText: "Подтвердить"
+        acceptText: "Перевести"
         cancelText: "Отменить"
 
     }
@@ -33,33 +34,15 @@ Dialog {
         }
         Label
        {
-           text: "№1     Километры в метры"
+                      text: "№1     Километры в метры"
 
        }
 
     }
+
 
     Row {
         y:200;
-        spacing: 1;
-
-        TextField {
-            id: k11
-            width: 200;
-            text: ""
-        }
-        Label
-       {
-           text: "№2     Метры в километры"
-
-       }
-
-
-
-    }
-
-    Row {
-        y:300;
         spacing: 1;
 
         TextField {
@@ -69,30 +52,15 @@ Dialog {
         }
         Label
        {
-           text: "№3     Часы в секунды"
-
-       }
-
-    }
-    Row {
-        y:400;
-        spacing: 1;
-
-        TextField {
-            id: k22
-            width: 200;
-            text: ""
-        }
-        Label
-       {
-           text: "№4     Секунды в часы"
+                      text: "№2     Часы в секунды"
 
        }
 
     }
 
+
     Row {
-        y:500;
+        y:300;
         spacing: 1;
 
         TextField {
@@ -102,23 +70,63 @@ Dialog {
         }
         Label
        {
-           text: "№5     Гигабайты в мегабайты"
+                 text: "№3     Гигабайты в мегабайты"
 
        }
 
     }
+
+
     Row {
-        y:600;
+        y:400;
         spacing: 1;
 
         TextField {
-            id: k33
+            id: k4
+            width: 200;
+            text: ""
+        }
+        Label
+
+       {
+                  text: "№4     Долар в рублях"
+
+       }
+
+    }
+
+
+    Row {
+        y:500;
+        spacing: 1;
+
+        TextField {
+            id: k5
             width: 200;
             text: ""
         }
         Label
        {
-           text: "№6     Мегабайты в гигабайты"
+                  text: "№5     Литры  в миллилитры"
+
+       }
+
+    }
+
+
+
+    Row {
+        y:600;
+        spacing: 1;
+
+        TextField {
+            id: k6
+            width: 200;
+            text: ""
+        }
+        Label
+       {
+                 text: "№6     Тонну  в килограммах"
 
        }
 
@@ -129,139 +137,50 @@ Dialog {
         spacing: 1;
 
         TextField {
-            id: k4
+            id: k7
             width: 200;
             text: ""
         }
         Label
        {
-           text: "№7     Долар в рублях"
-
-       }
-
-    }
-    Row {
-        y:800;
-        spacing: 1;
-
-        TextField {
-            id: k44
-            width: 200;
-            text: ""
-        }
-        Label
-       {
-           text: "№8     Рубль в долларах"
+           text: "№7     Килогерцы в герцы"
 
        }
 
     }
 
-    Row {
-        y:900;
-        spacing: 1;
-
-        TextField {
-            id: k5
-            width: 200;
-            text: ""
-        }
-        Label
-       {
-           text: "№9     Литры  в миллилитры"
-
-       }
-
-    }
-
-    Row {
-        y:1000;
-        spacing: 1;
-
-        TextField {
-            id: k55
-            width: 200;
-            text: ""
-        }
-        Label
-       {
-           text: "№10     Миллилитры в литры"
-
-       }
-
-    }
-
-    Row {
-        y:1100;
-        spacing: 1;
-
-        TextField {
-            id: k6
-            width: 200;
-            text: ""
-        }
-        Label
-       {
-           text: "№11     Тонну  в килограммах"
-
-       }
-
-    }
-    Row {
-        y:1200;
-        spacing: 1;
-
-        TextField {
-            id: k66
-            width: 200;
-            text: ""
-        }
-        Label
-       {
-           text: "№12     Килограммы в тонну"
-
-       }
-
-    }
 
 
     onDone: {
         if (result == DialogResult.Accepted) {
             res1 = k1.text*1000;
-            }
-        if (result == DialogResult.Accepted) {
-            res11 = k11.text/1000;
+            l1=k1.text
             }
         if (result == DialogResult.Accepted) {
             res2 = k2.text*3600;
-            }
-        if (result == DialogResult.Accepted) {
-            res22 = k22.text/3600;
+            l2=k2.text
             }
         if (result == DialogResult.Accepted) {
             res3 = k3.text*1024;
-            }
-        if (result == DialogResult.Accepted) {
-            res33 = k33.text/1024;
+            l3=k3.text
             }
         if (result == DialogResult.Accepted) {
             res4 = k4.text*65;
-            }
-        if (result == DialogResult.Accepted) {
-            res44 = k44.text/65;
+            l4=k4.text
             }
         if (result == DialogResult.Accepted) {
             res5 = k5.text*1000;
-            }
-        if (result == DialogResult.Accepted) {
-            res55 = k55.text/1000;
+            l5=k5.text
             }
         if (result == DialogResult.Accepted) {
             res6 = k6.text*1000;
+            l6=k6.text
             }
         if (result == DialogResult.Accepted) {
-            res66 = k66.text/1000;
+            res7 = k7.text*1000;
+            l7=k7.text
             }
+
 
     }
 
