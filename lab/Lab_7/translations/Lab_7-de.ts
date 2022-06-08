@@ -40,34 +40,34 @@
 <context>
     <name>Page_4</name>
     <message>
-        <source>Show Page 5</source>
-        <translation type="unfinished">Zur Seite 5</translation>
-    </message>
-    <message>
         <source>Задание 4</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Page 6</source>
+        <translation type="unfinished">Zur Seite 6</translation>
     </message>
 </context>
 <context>
     <name>Page_5</name>
     <message>
-        <source>Show Page 6</source>
-        <translation type="unfinished">Zur Seite 6</translation>
-    </message>
-    <message>
         <source>Задание 5</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Page 7</source>
+        <translation type="unfinished">Zur Seite 7</translation>
     </message>
 </context>
 <context>
     <name>Page_6</name>
     <message>
-        <source>Show Page 7</source>
-        <translation type="unfinished">Zur Seite 7</translation>
-    </message>
-    <message>
         <source>Задание 6</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Page 5</source>
+        <translation type="unfinished">Zur Seite 5</translation>
     </message>
 </context>
 <context>

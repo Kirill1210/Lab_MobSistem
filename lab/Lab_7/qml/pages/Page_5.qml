@@ -8,8 +8,8 @@ Page {
         anchors.fill: parent
         PullDownMenu {
             MenuItem {
-                text: qsTr("Show Page 6")
-                onClicked: pageStack.animatorPush(Qt.resolvedUrl("Page_6.qml"))
+                text: qsTr("Show Page 7")                                                                   /////////////////////////
+                onClicked: pageStack.animatorPush(Qt.resolvedUrl("Page_7.qml"))                             /////////////////////////
             }
         }
         contentHeight: column.height

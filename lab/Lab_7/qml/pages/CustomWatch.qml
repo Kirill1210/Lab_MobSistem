@@ -2,13 +2,21 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Item {
+    signal start_timer()                            /////////////////////////
+    onStart_timer: {                                /////////////////////////
+        console.log("Signal...");                   /////////////////////////
+        mouseAreaClickedHandler();                  /////////////////////////
+    }
+
     property string setHour: "00"
     property string  setMin: "00"
     property string  setSec: "00"
+    property string  setMlSec: "000"
 
     property int hour: 0;
     property int min: 0;
     property int sec: 0;
+    property int mlsec: 0;
 
     height: lb.height;
     width: lb.width;
@@ -16,7 +24,7 @@ Item {
 
     Label {
         id: lb
-        text: setHour + ":" + setMin + ":" + setSec
+        text: setHour + ":" + setMin + ":" + setSec + ":" + setMlSec
         font.pixelSize: 60
     }
 
@@ -37,10 +45,12 @@ Item {
                     id: mouseArea
                     anchors.fill: parent
                 }
-
         }
     }
-    Component.onCompleted: mouseArea.clicked.connect(mouseAreaClickedHandler)
+    Component.onCompleted: {
+        main.setCWObj(this); //Передача объекта в главный файл при инициализации                    /////////////////////////
+        mouseArea.clicked.connect(mouseAreaClickedHandler)
+    }
 
     function mouseAreaClickedHandler(mouse) {
         console.log("ClickedHandler")
@@ -48,6 +58,7 @@ Item {
         {
             bt.text = "Stop";
             rt.color = "red"
+
             tm.start();
         }
         else
@@ -57,16 +68,36 @@ Item {
             setHour = "00";
             setMin = "00";
             setSec = "00";
+            setMlSec = "000"
+
+            hour = 0;
+            min = 0;
+            sec = 0;
+            mlsec = 0;
+
             tm.stop();
         }
     }
 
     Timer {
         id: tm;
-        interval: 1000;
+        interval: 1;
         repeat: true
         running: false
+
         onTriggered: {
+            console.log("timer start + " + mlsec);
+
+            if(mlsec != 99){
+                mlsec++;
+
+                setMlSec = mlsec;
+
+            }
+            else {
+                mlsec = "000"
+
+
             if (sec != "59")
             {
                 sec++;
@@ -113,11 +144,14 @@ Item {
                         setMin = "00";
                         sec = 0;
                         setSet = "00";
+                        mlsec = 0;
+                        setMlSec= "000"
 
                         tm.stop();
                     }
                 }
             }
+          }
         }
     }
 }

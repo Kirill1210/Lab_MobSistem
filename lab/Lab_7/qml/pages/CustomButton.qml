@@ -20,6 +20,10 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter;
                 text: someText.text
             }
+            onClicked: {                                        /////////////////////////
+                console.log("Custom button click");             /////////////////////////
+                main.statrTimerCustomButton();                  /////////////////////////
+            }
         }
     }
 }

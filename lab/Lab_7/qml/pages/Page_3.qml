@@ -31,9 +31,9 @@ Page {
                 }
             }
 
-            Label {
+            Text {
                 id: lb
-                text: "Hello Word"
+                text: "Текст"
                 anchors.horizontalCenter: parent.horizontalCenter
                 y: 250;
                 color: "white"
@@ -60,6 +60,8 @@ Page {
                     from: "back"
                     to: "way"
                     ParallelAnimation {
+                        PropertyAnimation { target: lb; properties: "font.pixelSize"; from: lb.font.pixelSize;
+                            to: 1000; duration: 2000;}
                         PropertyAnimation { target: lb; properties: "y"; from: lb.y; to: 1000; duration: 2000;}
                         PropertyAnimation { target: lb; properties: "color"; from: lb.color; to: "blue"; duration: 100;}
                         RotationAnimation { target: lb; from: 0; to: 180; duration: 1000;}
@@ -68,6 +70,8 @@ Page {
                 Transition {
                     from: "way"
                     to: "back"
+                    PropertyAnimation { target: lb; properties: "font.pixelSize"; from: lb.font.pixelSize;
+                        to: 60; duration: 2000;}
                     PropertyAnimation { target: lb; properties: "y"; from: lb.y; to: 250; duration: 2000}
                     PropertyAnimation { target: lb; properties: "color"; from: lb.color; to: "white"; duration: 100;}
                     RotationAnimation { target: lb; from: lb.rotation; to: 0; duration: 1000;}
